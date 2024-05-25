@@ -42,7 +42,7 @@ function handleFormSubmit(event) {
       loaderWrapper.classList.add('is-hidden');
     })
     .catch(error => {
-      errorMessage(
+      displayErrorMessage(
         'Sorry, there are no images matching your search query. Please try again!'
       );
       console.error('Error fetching data:', error);
@@ -61,7 +61,7 @@ const iziToastConfig = {
   messageLineHeight: '24',
 };
 
-function errorMessage(message, title) {
+function displayErrorMessage(message, title) {
   iziToast.error({
     ...iziToastConfig,
     title: title || '',
